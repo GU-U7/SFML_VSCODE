@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "SFML .cpp a .o",
+			"command": "D:\\MinGW\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-Wall",
+				"-O2",
+				"-DSFML_STATIC",
+				"-I",
+				"D:\\SFML\\SFML-2.5.1\\include",
+				"-c",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.o"
+			],
+			"options": {
+				"cwd": "D:\\MinGW\\mingw64\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Primer Paso"
+		},
+		{
+			"type": "cppbuild",
+			"label": "SFML .o a .exe",
+			"command": "D:\\MinGW\\mingw64\\bin\\g++.exe",
+			"args": [
+                "-L",
+                "D:\\SFML\\SFML-2.5.1\\lib",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}\\${fileBasenameNoExtension}.o",
+                "-s",
+                "-lsfml-graphics",
+                "-lsfml-window", 
+                "-lsfml-network", 
+                "-lsfml-system", 
+                "-lsfml-audio"
+			],
+			"options": {
+				"cwd": "D:\\MinGW\\mingw64\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Segundo Paso"
+		}
+	]
+}
